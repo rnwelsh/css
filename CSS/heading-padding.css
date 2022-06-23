@@ -1,0 +1,19 @@
+/* * add invisible padding to headings, so navigating to them with url # links won't put the heading at the very top of the page */
+/* : https://css-tricks.com/hash-tag-links-padding/ */
+
+:root {
+  --h-link-padding: 2rem;
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before {
+
+  display: block;
+  content: " ";
+  margin-top: calc( var(--h-link-padding) * -1 ); /* ! this calc isnt tested */
+  height: var(--h-link-padding);
+  visibility: hidden;
+
+}
